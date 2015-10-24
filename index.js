@@ -1,11 +1,10 @@
-// Process [toc](|Title)
+// Process [toc]
 
 'use strict';
 
 module.exports = function(md) {
 
     var TOC_REGEXP = /^\[toc\](?:\((?:\s+)?([^\)]+)(?:\s+)?\)?)?(?:\s+?)?$/im;
-    var TOC_DEFAULT = 'Table of Contents';
     var gstate;
 
     function toc(state, silent) {
@@ -40,11 +39,7 @@ module.exports = function(md) {
         token.markup = '[toc]';
 
         token = state.push('toc_body', '', 0);
-        var label = state.env.tocHeader || TOC_DEFAULT;
-        if (match.length > 1) {
-            label = match.pop();
-        }
-        token.content = label;
+        token.content = '';
 
         token = state.push('toc_close', 'toc', -1);
 
@@ -123,7 +118,7 @@ module.exports = function(md) {
             return res.join('');
         });
 
-        return '<h3>' + tokens[index].content + '</h3>' + list.join('') + new Array(indent + 1).join('</ul>');
+        return list.join('') + new Array(indent + 1).join('</ul>');
     };
 
     md.core.ruler.push('grab_state', function(state) {
