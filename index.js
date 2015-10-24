@@ -52,15 +52,12 @@ module.exports = function(md) {
 
         return true;
     }
-    var makeSafe = function(label) {
-        return label.replace(/[^\w\s]/gi, '').split(' ').join('_');
-    };
 
     md.renderer.rules.heading_open = function(tokens, index) {
         var level = tokens[index].tag;
         var label = tokens[index + 1];
         if (label.type === 'inline') {
-            var anchor = makeSafe(label.content) + '_' + label.map[0];
+            var anchor = label.map[0];
             return '<' + level + '><a id="' + anchor + '"></a>';
         } else {
             return '</h1>';
@@ -90,7 +87,7 @@ module.exports = function(md) {
             if (heading.type === 'inline') {
                 headings.push({
                     level: +token.tag.substr(1, 1),
-                    anchor: makeSafe(heading.content) + '_' + heading.map[0],
+                    anchor: heading.map[0],
                     content: heading.content
                 });
             }

@@ -15,5 +15,5 @@ bower install markdown-it-toc
 ```javascript
 var md = window.markdownit();
 md = md.use(window.markdownitTOC);
-console.log(md.render('[TOC]'));
+console.log(md.render('# test\n\n[TOC]\n\n## something'));
 ```
