@@ -1,5 +1,3 @@
-// Process [toc]
-
 'use strict';
 
 module.exports = function(md) {
