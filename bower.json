@@ -1,0 +1,22 @@
+{
+  "name": "markdown-it-toc",
+  "main": "markdown-it-toc.min.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tylerlong/markdown-it-toc",
+  "authors": [
+    "Tyler Long <tyler4long@gmail.com>"
+  ],
+  "description": "Table of contents plugin for markdown-it",
+  "keywords": [
+    "markdown",
+    "markdown-it"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
