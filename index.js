@@ -4,7 +4,7 @@
 
 module.exports = function(md) {
 
-    var TOC_REGEXP = /^\[toc\](?:\((?:\s+)?([^\)]+)(?:\s+)?\)?)?(?:\s+?)?$/im;
+    var TOC_REGEXP = /^\[toc\]$/im;
     var gstate;
 
     function toc(state, silent) {
