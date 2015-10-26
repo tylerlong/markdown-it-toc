@@ -99,7 +99,7 @@ module.exports = function(md) {
             if (heading.level > indent) {
                 var ldiff = (heading.level - indent);
                 for (var i = 0; i < ldiff; i++) {
-                    res.push('<ul>');
+                    res.push('<ul class="task-list">');
                     indent++;
                 }
             } else if (heading.level < indent) {
